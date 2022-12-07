@@ -15,11 +15,68 @@
             }
             show();
 
-            // 2. 익명함수 - 함수에 이름이 없고 대신 변수에 대입하여 변수명으로 호충
+            // 2. 익명함수 - 함수에 이름이 없고 대신 변수에 대입하여 변수명으로 호출
             let output= function(){
                 document.write("output <br>");
             }
+            // 익명함수를 가진 변수의 이름으로 함수 호출
+            output();
+
+            // 3. 화살표 함수 - 익명함수의 표기법을 간소화 [ 살짝 다른 특성이 있음. 나중에 소개 ]
+            let display= ()=>{
+                document.write("display <br>");
+            }
+            // 함수호출은 익명함수와 마찬가지로 변수이름으로 호출함
+            display();
+
+            // 당연히 화살표함수도 파라미터를 받을 수 있음
+            let display2= (name)=>{
+                document.write("display2 : " + name + "<br>");
+            }
+            display2("aaa");
+
+            // 화살표함수의 표기법을 조금 더 축약형으로 줄이기
+            // 1) 파라미터의 개수가 1개일 때 () 생략가능
+            let display3= name=>{
+                document.write("display3 : " + name + "<br>");
+            }
+            display3("robin");
+
+            // 2) 만약 {}안에 함수의 실행문 코드가 한줄이라면 {}도 생략 가능
+            let display4= name=> document.write("display4 : " + name + "<br>");
+            display4("hong");
+
+            // 단, 파라미터가 0개이거나 2개이상이면 () 생략불가
+            let display5= ()=> document.write("display5" +"<br>");
+            display5();
+            
+            let display6= (name, age)=> document.write("display6 : " + name+age + "<br>");
+            display6("hong", "20");
 
         </script>
+
+        <hr>
+
+        <button id="b1">button</button>
+        <h3 id="hh"></h3>
+        <script>
+
+            // 실제 화살표함수는 대부분 이벤트 처리용 콜백함수에 사용됨
+
+            // 1. 버튼에 클릭이벤트 처리하기
+            // 1) 예전방식
+            let b1= document.getElementById("b1");
+            b1.onclick= function(){
+                document.getElementById("hh").innerHTML= "click button";
+            }
+
+            // 2) 화살표함수
+            b1.onclick= ()=> document.getElementById("hh").innerHTML= "click button";
+
+            // 2. 배열의 요소에 접근하는 반복문 처리할 때 많이 사용됨
+            
+
+        </script>
+
     </body>
 </html>
