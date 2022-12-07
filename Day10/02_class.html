@@ -203,5 +203,76 @@
 
         </script>
 
+        <hr>
+
+        <script>
+
+            // 정적멤버 static 키워드 추가 - 객체생성 없이 사용할 수 있는 멤버
+            class First{
+                // 정적 멤버변수 - 속성
+                static name="kim";
+
+                // 정적 멤버함수 - 메소드
+                static show(){
+                    document.write("static method <br>");
+                }
+            }
+
+            // static 멤버는 객체 생성없이 [클래스명.] 으로 접근
+            document.write(First.name + "<br>");
+            First.show(); // 정적 메소드 호출
+
+            // 주의! 객체를 생성하여 참조변수로 static멤버접근은 불가
+            let f= new First();
+            document.write(f.name + "<br>"); // undefined. JS는 객체 생성후 새로운 멤버추가가 가능하기에 name은 새로운 멤버변수로 인식
+
+
+        </script>
+
+        <hr>
+
+        <script>
+
+            // JS만의 특별한 문법 : 구조분해할당 - 객체의 멤버 중 일부를 뽑아오는 기능
+            class Nice{
+                name= "samsss";
+                age= 202;
+                address= "seoul";
+            }
+
+            let nice= new Nice();
+            document.write(nice.name+ "<br>");
+            document.write(nice.age+ "<br>");
+            document.write(nice.address+ "<br>");
+
+            // 멤버 사용할 때 마다 nice라는 객체 참조변수명을 명시하는 것이 은근 짜증
+            // 특정한 멤버값을 일반변수에 대입하여 사용하면 조금 더 간결해짐
+            //let name= nice.name;
+            //let age= nice.age;
+            
+            // 위처럼 멤버값을 별도로 빼오는 코드를 한줄로 작성하는 문법
+            // 구조 분해 할당
+            let {name, age}= nice;
+            document.write(name+ ","+ age); // 더 간결함
+            document.write("<br>");
+
+            // 이 구조분해할당 문법은 별도의 함수에 객체를 전달하여 그 멤버중 일부를
+            // 사용할 때 매우 유용함
+            
+            // 구조분해할당 안했을때
+            function showNiceAddress(obj){
+                document.write("주소 : " + obj.address + "<br>");
+            }
+            showNiceAddress(nice); // 객체전달
+
+            // 구조분해할당 했을 때
+            function showNiceAddress2({address}){ // 구조분해할당으로 객체의 멤버받기
+                document.write("주소 : " + address + "<br>");
+            }
+            showNiceAddress2(nice); // 객체전달
+
+
+        </script>
+
     </body>
 </html>
