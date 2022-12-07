@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>layout sematic</title>
+        <style>
+            #wrapper{
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            header{
+                background-color: aqua;
+                height: 50px;
+            }
+            nav{
+                background-color: red;
+                height: 150px;
+                display: table-cell;
+                padding: 8px;
+                padding-right: 12px;
+            }
+            article{
+                background-color: blue;
+                height: 150px;
+                display: table-cell;
+                padding: 16px;
+            }
+            footer{
+                background-color: chartreuse;
+                text-align: center;
+                vertical-align: middle;
+                padding: 0.8em 0em;
+            }
+            footer h5{color: brown;}
+        </style>
+    </head>
+    <body>
+        
+        <!-- 시멘틱(의미를 가진) 태그를 이용하여 레이아웃 설계 -->
+        <div id="wrapper">
+            <header>
+                <h1>My Blog</h1>
+            </header>
+
+            <nav>
+                <h2>links</h2>
+                <ul>
+                    <li><a href="">프로젝트 #1</a></li>
+                    <li><a href="">프로젝트 #2</a></li>
+                    <li><a href="">프로젝트 #3</a></li>
+                </ul>
+
+                <figure>
+                    <img src="./image/storm.jpg" alt="사진" width="85" height="85">
+                    <figcaption>스톰</figcaption>
+                </figure>
+            </nav>
+
+            <article>
+                <section>
+                    <h4>AAA</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit odit, qui veniam nesciunt dolorem pariatur deleniti ab ex libero sequi, laborum suscipit explicabo nostrum mollitia, repudiandae nulla architecto quod eaque?
+                    </p>
+                </section>
+                    <h4>BBB</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta eum autem mollitia suscipit dolorum incidunt ducimus, maiores corporis expedita ipsa officiis, assumenda impedit nesciunt. Expedita porro sequi vitae! Dolorum, corporis?
+                    </p>
+                
+            </article>
+
+            <footer>
+                <h5>COPYRIGHT &copy; 2022 mrhi</h5>
+            </footer>
+        </div>
+        
+    </body>
+</html>

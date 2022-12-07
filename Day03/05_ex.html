@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>링크, 리스트 스타일</title>
+
+        <style>
+            a.aa:link{color: blue;}
+            a.aa:visited{color: green;}
+            a.aa:hover{color: red; font-size: 2em;}
+            a.aa:active{color: yellow; font-size: 3em;}
+
+            p:hover{background-color: aqua;}
+
+            img{background-color: yellow; border: 2px solid red;}
+            img:hover{border: 2px solid blue; width: 80%;}
+
+            ul{list-style-type: circle;}
+            ul{list-style-type: disc;}
+            ul{list-style-type: square;}
+            ul{list-style-type: circle; list-style-position: inside;}
+            ul{list-style-image: url("./image/border.png");}
+
+            ol{list-style-type: lower-alpha;}
+            ol{list-style-type: lower-latin;}
+            ol{list-style-type: lower-roman;}
+            ol{list-style-type: lower-greek;}
+            ol{list-style-type: upper-roman;}
+            ol{list-style-type: decimal-leading-zero;}
+
+
+        </style>
+
+    </head>
+    <body>
+        <a class="aa" href="http://www.google.com">Google</a>
+        <p>Hello world</p>
+
+        <img src="./image/image.png" alt="image">
+        
+        <br>
+        <hr>
+        <br>
+        
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <ol>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ol>
+
+    </body>
+</html>

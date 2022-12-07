@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Font CSS</title>
+
+        <style>
+            p{font-family: "휴먼편지체", sans-serif;}
+            p{font-family: monospace;}
+
+            /* 디바이스마다 설치된 폰트가 다르기에 설정한 폰트가 적용되지 않을 수 있음 */
+            /* 그래서 사용하는 것이 [웹폰트] */
+            @font-face{
+                font-family: "My font";
+                src: url("./font/kmi_bold.ttf");
+            }
+
+            @font-face {
+                font-family: "My";
+                src: url("./font/FRSCRIPT.TTF");
+            }
+
+            p{font-family: "My Font", serif;} /*웹폰트 저장*/
+            h1{font-family: "My", serif;}
+            /* 폰트 사이즈 */
+            p{font-size: 16px;}
+            p{font-size: 120%;}
+            p{font-size: 2.5em;}
+
+            /* bold, normal */
+            p{font-weight: bold;}
+
+            /* italic, normal */
+            p{font-style: italic;}
+
+            /* 위 폰트관련 속성들을 한방에 축약형으로 적용 [순서 : weight, style, size, family] - 필요한 것만 선택해서 적용가능 */
+            p{font: bold italic 1.5em "My font", serif;}
+
+            /* 텍스트 정렬 [가로축 정렬] */
+            p{text-align: right;}
+            p{text-align: justify;} /*양쪽정렬*/
+            p{text-align: center;}
+            
+            /* 대소문자 변환 */
+            p{text-transform: uppercase;}
+            p{text-transform: lowercase;}
+            p{text-transform: capitalize;}
+
+            /* 텍스트에 줄긋기 */
+            p{text-decoration: line-through;}
+            p{text-decoration: overline;}
+            p{text-decoration: underline;}
+            
+            
+            
+
+            /* 텍스트 그림자 */
+            p{text-shadow: 5px 3px 5px red;}
+
+            /* 워드랩 */
+            p.aaa{
+                width: 150px;
+                border: 4px solid blue;
+                padding: 8px;
+
+                word-wrap: break-word; /* 워드랩이 없으면 영어 긴 글씨는 영역을 벗어남 */
+            }
+
+            /* 다중 컬럼 */
+            #kkk{
+                column-count: 4;
+                column-gap: 80px;
+                column-rule: 4px dashed green;
+            }
+
+        </style>
+
+    </head>
+    <body
+        <p>Hello World 휴먼편지체입니다.</p>
+        <h1>hello world 안녕하세요</h1>
+        
+        <!-- word wrap -->
+        <p class="aaa">
+            한글은 전혀 문제없이 자동 워드랩 됨
+            aaaaaaaaaaaaaaaaaaaaaab caaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </p>
+
+        <!-- 다중 컬럼 -->
+        <p id="kkk">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, alias. Obcaecati laboriosam exercitationem facere autem consequuntur? Facilis dolor non cupiditate magnam aperiam, voluptatum debitis ullam sint, laudantium velit laborum at.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat, autem harum ratione repellendus debitis a consequatur sunt, quos dolorum blanditiis hic nihil quibusdam quam. Eaque molestias quam id ullam.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, eos corrupti! Recusandae, ratione et odio soluta cupiditate doloribus consequatur nostrum quod quisquam dolor enim, quam vitae possimus commodi maiores tenetur!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi sapiente officiis molestias voluptatum deleniti obcaecati, consectetur illo necessitatibus sed. Aut ducimus sapiente doloribus officia hic iure consequuntur facere ipsam vitae?
+        </p>
+
+    </body>
+</html>

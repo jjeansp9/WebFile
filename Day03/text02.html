@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>테스트</title>
+
+        <style>
+            body{
+                margin-left: 200px;
+                background-color: green;
+                background-image: url("image/image.png");
+                background-repeat: no-repeat;
+            }
+            div{
+                background-color: yellowgreen;
+                border: 10px solid red;
+                border-image-source: url("./image/border.png");
+                border-image-slice: 30 30;
+                border-image-repeat: round;
+            }
+            ol{color: red;}
+            ol>li{color: blue;}
+
+            #tb{border: 10px solid black;}
+            tr>td{border: 10px solid black;}
+            #td2{border-bottom: 10px;}
+        </style>
+    </head>
+    <body>
+
+        <div>
+            <h1>CSS</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt recusandae vel atque hic unde corrupti soluta enim, possimus ut fugit, doloremque amet ipsam debitis deleniti eligendi, iusto cupiditate! Dolor, hic?
+            </p>
+        </div>
+
+        <ol>
+            <li>html5로 문서를 정의한다</li>
+            <li>css로 문서를 정의한다</li>
+            <li>javascript로 문서를 정의한다</li>
+        </ol>
+
+        <table id="tb">
+            <tr>
+                <td class="td">1</td>
+                <td id="td2">2</td>
+                <td class="td">3</td>
+                <td class="td">4</td>
+                <td class="td">5</td>
+            </tr>
+
+        </table>
+        
+    </body>
+</html>

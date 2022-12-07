@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{margin: 0px; padding: 0px;}
+            ul{list-style: none;}
+
+            ul.menu>li{
+                display: inline-block;
+                margin: 10px;
+                border: 1px solid blue;
+                padding: 5px 10px;
+            }
+
+            ul.menu_item{
+                border: 1px dotted red;
+                display: none;
+                position: absolute;
+            }
+            li.submenu:hover{
+                background-color: aqua;
+            }
+            li.submenu:hover .menu_item{
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <li class="submenu">
+                    aaa
+                    <ul class="menu_item">
+                        <li><a href="">111</a></li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    bbb
+                    <ul class="menu_item">
+                        <li>222</li>
+                        <li>222</li>
+                        <li>222</li>
+                        <li>222</li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    ccc
+                    <ul class="menu_item">
+                        <li>333</li>
+                        <li>333</li>
+                        <li>333</li>
+                        <li>333</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>

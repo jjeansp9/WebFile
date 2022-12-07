@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Regular Expression(정규표현식)</title>
+    </head>
+    <body>
+        <h3>정규표현식을 이용한 유효성 검사</h3>
+        <input type="text" id="in">
+        <button onclick="check()">check</button>
+        <h5 id="result">결과</h5>
+
+        <script>
+            function check(){
+                // 검증용 정규표현식
+                var regExp= /^[a-z]+$/; // 영어소문자로 시작 및 끝나야 하며, 1글자 이상
+
+                var value= document.getElementById("in").value;
+
+                var result= document.getElementById("result");
+
+                // 정규표현식을 검증하는 2가지 방법
+                // 1. String 객체의 .match() 메소드
+                if(value.match(regExp)) result.innerHTML="OK";
+                else result.innerHTML="요구하는 형식이 아님";
+
+                // 2. RegExp 객체의 .test() 메소드
+                if(regExp.test(value)) result.innerHTML="OK";
+                else result.innerHTML="요구하는형식아님"
+
+                // 정규표현식 연습.
+                var regExp= /^[a-z]+$/; // 영어소문자로 시작 및 끝나야 하며, 1글자 이상
+                regExp= /a/; // a가 포함된 모든 값. 대소문자 구분
+                regExp= /^a/; // 시작이 무조건 a여야만 함
+                regExp= /^[a-z]/; // 시작이 무조건 영어 소문자여야만 함
+                regExp= /a$/; // 끝이 무조건 a여야만 함
+                regExp= /^a$/; // a 1개만 써야됨
+                regExp= /^[a-z]$/; // 영어소문자 1개만
+                regExp= /^[a-zA-Z]$/; // 영어문자 1개만
+                regExp= /^[a-zA-Z0-9]$/; // 영어,숫자 1개만
+                regExp= /^[a-z]{2}$/; // 영어소문자 2개만
+                regExp= /^[a-z]{2,4}$/; // 영어소문자 2 ~ 4
+                regExp= /^[a-z]{4,}$/; // 영어소문자 4개 이상
+                regExp= /^\w{2}$/; // 문자 또는 숫자 2개
+                regExp= /^[a-z]*$/; // 영어소문자 0개 이상 [ 값이 없어도 OK ]
+                regExp= /^[a-z]?$/; // 영어소문자 0개 or 1개 [ 값이 없어도 OK ]
+                regExp= /^\d$/; // 숫자 1개
+                regExp= /^\d\d\d$/; // 숫자 3개
+                
+                regExp= /^\d\d\d\d-\d\d-\d\d$/; // 생년월일 xxxx-xx-xx 형식
+                regExp= /^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z]+$/ // xxxx@xxx.xxx 이메일형식
+                regExp= /^http:\/\//; // 시작이 http:// - url 검사
+
+                
+
+                if(regExp.test(value)) result.innerHTML="OK";
+                else result.innerHTML="요구하는형식아님"
+            }
+        </script>
+
+        <!-- chapter 10. 연습문제 p.416 -->
+
+    </body>
+</html>

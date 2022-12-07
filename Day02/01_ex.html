@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Day2</title>
+    </head>
+    <body>
+        <audio src="./audio/old_pop.mp3" controls="controls"></audio>
+
+        <!-- 브라우저마다 지원되는 음원의 파일포멧이 다르기에 여러개를 설정 권장 -->
+        <audio controls>
+            <source src="./audio/old_pop.mp3" type="audio/mp3">
+            <source src="./audio/old_pop.ogg" type="audio/ogg">
+        </audio>
+
+        <!-- 비디오는 오디오와 거의 같음. poster, width, height 속성이 추가됨 -->
+        <video src="video/movie.ogv" controls></video>
+
+        <!-- 브라우저마다 지원되는 영상의 파일포멧이 다르기에 여러개를 설정 권장 -->
+        <video controls width="640" height="350" poster="./video/image/seolak.jpg">
+            <source src="./video/trailer.mp4" type="video/mp4">
+            <!-- ogv 비디오는 ogg 타입으로 설정해야함 -->
+            <source src="./video/trailer.ogv" type="video/ogg">
+            <source src="./video/trailer.webm" type="video/webm">
+        </video>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- iframe [ inline frame ] -->
+        <iframe src="../Day01/02_text.html" frameborder="1" width="80%" height="400" style="margin: 32px;"></iframe>
+
+        <!-- 다른 웹서버의 사이트 웹문서 보기도 가능함. [일부 서버환경에 따라 보이지 않을 수도 있음] -->
+        <iframe src="http://jspstudio.dothome.co.kr/02HttpRequest/index.html" frameborder="0" width="80%" height="400" style="margin: 32px;"></iframe>
+
+        <!-- 링크요소 <a> 에 의해 열리는 웹문서를 다르게 만들 수 있음 -->
+        <iframe src="" frameborder="1" name="aaa" width="80%" height="400" style="margin: 32px;"></iframe>
+        <a href="http://www.w3c.org" target="aaa">웹 언어 학교</a>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- 웹문서의 특정 영역을 구분해주는 요소 : div, span -->
+        <div style="background-color: yellow; border: 2px solid red; padding-left: 10px;">
+            <h2>TITLE</h2>
+            <p>This is message</p>
+        </div>
+
+        <!-- <div>의 블럭요소 특징 -->
+        <p>
+            안녕하세요. 나는 <div style="color: blue; border: 4px solid yellowgreen;">홍길동</div> 입니다.
+        </p>
+
+        <!-- <span>의 인라인요소 특징 -->
+        <p>
+            안녕하세요. 나는 <span style="color: blue; border: 4px solid green;">홍길동</span> 입니다.
+        </p>
+
+
+    </body>
+
+
+</html>

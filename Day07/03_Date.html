@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Date Object</title>
+        <script>
+            // JS의 유용한 내장 생성자함수들 [ Date, Number, String, Math, Array ]
+
+            // 1. Date
+            var a= new Date();
+            document.write(a + "<br>"); // 객체 참조변수를 출력하면 자동 .toString() 발동
+            document.write(typeof(a) + "<br>");
+
+            // 주요기능 메소드
+            document.write(a.toDateString() + "<br>"); // Thu Dec 01 2022
+            document.write(a.toLocaleString() + "<br>"); // 2022. 12. 1. 오전 11:18:23
+            document.write(a.toLocaleDateString() + "<br>"); // 2022. 12. 1.
+            document.write(a.getYear() + "<br>"); // 1900년부터 기준
+            document.write(a.toLocaleTimeString() + "<br>"); // 오전 11:18:23
+
+            document.write("<hr>");
+
+            document.write(a.getDate() + "<br>");
+            document.write(a.getFullYear() + "<br>"); // 2022
+            document.write(a.getMonth() + "<br>");
+            document.write(a.getHours() + "<br>");
+            document.write(a.getMinutes() + "<br>");
+            document.write(a.getSeconds() + "<br>");
+            
+            document.write(a.getTime() + "<br>"); // 1970년 1월1일 09:00:00부터 1ms 마다 증가된 수를 시간 설정
+
+            // set도 가능함
+            var b= new Date();
+            document.write(b.toLocaleString() + "<br>");
+            b.setFullYear(2018);
+            document.write(b.toLocaleString() + "<br>");
+
+            // 객체를 생성하면서 생성자 함수 파라미터로 날짜를 지정할 수 있음
+            var c= new Date(2025, 7, 20); // 2025년 8월 20일
+            document.write(c.toLocaleString() + "<br>");
+
+            c= new Date("Wed Sep 13 2017 13:40:13 GMT+0900");
+            document.write(c.toLocaleString() + "<br>");
+
+            c= new Date("2017. 9. 13");
+            document.write(c.toLocaleString() + "<br>");
+
+            c= new Date(714564567845033); // 1970년 기준으로 1ms마다 증가된 수를 시간 설정
+            document.write(c.toLocaleString() + "<br>");
+
+            // 두 날짜 사이의 비교
+            var a= new Date("2022.06.28");
+            var b= new Date();
+
+            var diff = b.getTime() - a.getTime(); // 밀리초 계산
+            document.write("두 날짜 차이 : " + diff + "<br>");
+
+            // 밀리초 --> Day로 변환
+            var sec= diff/1000; // ms -> seconds
+            var min= sec/60; // seconds -> minute
+            var hour= min/60; // min -> hour
+            var day= hour/24; // hour -> day
+
+            day= Math.floor(day); // 소수점 제거
+            document.write("두 날짜 일수차이 : " + day + "일<br>");
+            
+        </script>
+    </head>
+    <body>
+        <hr>
+        <input type="date" id="ss">
+        <button onclick="clickBtn()">기준일 입력</button>
+
+        <script>
+            function clickBtn(){
+                var e= document.getElementById('ss');
+                document.write(e.value + "<br>");
+
+                var a= new Date(e.value); // 기준일
+                var b = new Date(); // 오늘
+
+                // var diff= b.getTime() - a.getTime();
+                var diff = b-a; // 자동 getTime()으로 계산함
+                var day = diff/(1000*60*60*24);
+                day = Math.floor(day);
+
+                if(day>0) document.write("오늘로부터 " + day + "일 전 <br>");
+                else if (day <0) document.write("오늘로부터 " + (-day) + "일 후 <br>");
+                else document.write("오늘 <br>");
+            }
+
+            
+        </script>
+        
+
+    </body>
+</html>

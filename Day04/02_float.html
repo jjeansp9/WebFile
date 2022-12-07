@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>float</title>
+        
+        <style>
+            img{float: left; margin: 10px;}
+            
+            /* 앞에 요소가 float이면 내 의지와 상관없이 밑에 깔려버림. 이 특성을 제거 */
+            #aa{clear: both;}
+        </style>
+
+    </head>
+    <body>
+        <img src="./image/sunshine.jpg" alt="이미지" width="180" height="130">
+
+        <p style="border: 2px solid red;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate non fugit consequatur optio sunt et magni eaque? Totam inventore maiores alias eveniet fugiat ut assumenda illo consequatur, sapiente quia eaque!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti ad numquam quas necessitatibus illum quo facilis delectus, laudantium veritatis facere at eaque repellat sapiente! Consequatur odio cumque rem! Distinctio, maxime?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, autem. Vel quisquam corrupti incidunt dolorum quidem eaque officiis quaerat, doloribus sit, quam quae dignissimos distinctio, quasi maiores eius ut dolore.
+        </p>
+
+        <!-- 기사와 상관없는 글 -->
+        <p id="aa">여기는 이미지와 상관없는 글</p>
+
+        <!-- float으로 자식요소를 띄우면 부모요스의 height가 영향받음 -->
+        <div style="border: 2px solid blue; background-color: yellowgreen;">
+            <h2 style="float: left;">TEST</h2>
+        </div>
+
+    </body>
+</html>
