@@ -1,0 +1,37 @@
+/* 전체영역 마진패딩 제거 및 글꼴통합  ※ 검정#fff 하양 #333 글꼴 font-family: Arial, Helvetica, sans-serif; 통일  */
+/* #taget id지정해서 설정가능 .taget으로 클래스 설정가능 */
+*{
+    margin: 0; padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+#map{
+    float: left;
+    width: 85%;
+    height: 100%; 
+    display: inline-block;
+}
+
+
+#location_search{
+    float: right;
+    width: 15%;
+    height: 100%;
+    padding-top: 150px;
+    border: 3px solid black;
+    
+}
+
+
+ul.option_item{
+    display: none;
+    border: 2px solid black;
+}
+
+li #option:checked ~ .option_item{
+    display: flex;
+    color: red;
+}
+
