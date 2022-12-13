@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원가입</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!-- 반응형 웹 -->
+        <!-- 데스크탑, 태블릿 -->
+        <link rel="stylesheet" href="./pc.css" media="(min-width:601px)">
+
+        <!-- 모바일 -->
+        <link rel="stylesheet" href="./mobile.css" media="(max-width:600px)">
+    </head>
+    <body>
+        <div id="page">
+            <h2 style="text-align: center; padding: 30px; color: rgb(75, 75, 75);">회원가입</h2>
+            <header>
+                <h3><img src="./pngwing.png" alt=""> 온라인 회원가입 작성</h3>
+                <hr style="margin-bottom: 10px;">
+                <p style="display: inline; margin-right: 60px; margin-left: 20px;">고객님의 정보는</p>
+                <p style="display: inline;">개인정보보호정책에 의해 철저하게 보호됩니다.</p>
+
+                <hr style="margin-bottom: 20px; margin-top: 10px;">
+            </header>
+
+            <div id="box">
+                <aside id="left">
+                    <ul>     
+                        <li><strong>사용자ID</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li><strong>비밀번호</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li><strong>비밀번호 확인</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li><strong>성명</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li style="margin-top: 52px; margin-bottom: 53px;"><strong>E-mail</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li><strong>우편번호</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li style="margin-top: 21px; margin-bottom: 21px;"><strong>주소</strong><img src="./pngwing.png" alt=""></li>
+                        <hr>
+                        <li><strong>휴대폰번호</strong><img src="./pngwing.png" alt=""></li>
+                    </ul>
+                </aside>
+
+                <aside id="right">
+                    <input type="text" size="16">
+                    <button>ID 중복확인</button>
+                    <hr>
+                    <input type="password" size="16">
+                    <li style="display: inline;">4~12자리의 영문,숫자,특수문자(!,@,$,%,^,&,*)만 가능</li>
+                    <hr>
+                    <input type="password" size="16">
+                    <hr>
+                    <input type="text" size="16">
+                    <li style="display: inline;">띄어쓰기 없이 입력, 반드시 실명이어야 합니다!</li>
+                    <hr>
+                    <input type="e-mail" size="26"> <strong>메일 수신여부</strong><br>
+                    <li><strong>할인 이벤트정보</strong> 및 할인쿠폰,관심분야 등 꼭 필요한 정보를 빠르게 받아보실 수 있습니다.</li>
+                    <li>비밀번호 분실시 E-mail로 확인해 드리니, <strong id="email">정확한 E-mail주소를 기입</strong>해 주세요.</li>
+                    <hr>
+                    <input type="text" size="6"> - <input type="text" size="6"> <button>우편번호 검색</button>
+                    <hr>
+                    <input type="text" size="60">
+                    <input type="text" size="60">
+                    <hr>
+                    <input type="text" size="3"> - <input type="text" size="4"> - <input type="text" size="4">
+                </aside>
+
+            </div>
+            <div style="text-align: center;">
+                <button style="margin-bottom: 20px;"><a href="./login.html">다음</a></button>
+            </div>
+        </div>
+    </body>
+</html>

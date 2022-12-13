@@ -1,0 +1,40 @@
+*{margin: 0px; padding: 0px; list-style: none;}
+            
+
+#page{
+    width: 800px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#box{
+    padding: 8px;
+    display: inline-flex;
+}
+
+#left{
+    width: 30%;
+    background-color: rgb(215, 214, 214);
+    color: rgb(72, 72, 72);    
+}
+#right{
+}
+
+img{
+    width: 8px;
+    height: 6px;
+    padding: 6px;
+}
+
+li{
+    padding: 10px;
+}
+input{
+    margin: 11px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
