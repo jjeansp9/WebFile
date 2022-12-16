@@ -9,12 +9,14 @@
 
         <!-- 반응형 웹 -->
         <!-- 데스크탑, 태블릿 -->
-        <link rel="stylesheet" href="./pc.css" media="(min-width:601px)">
+        <!-- <link rel="stylesheet" href="./pc.css" media="(min-width:601px)"> -->
+        <link rel="stylesheet" href="./pc.css">
 
         <!-- 모바일 -->
-        <link rel="stylesheet" href="./mobile.css" media="(max-width:600px)">
+        <!-- <link rel="stylesheet" href="./mobile.css" media="(max-width:600px)"> -->
     </head>
     <body>
+
         <div id="page">
             <h2 style="text-align: center; padding: 30px; color: rgb(75, 75, 75);">회원가입</h2>
             <header>
@@ -59,22 +61,52 @@
                     <input type="text" size="16" id="name">
                     <li style="display: inline;">띄어쓰기 없이 입력, 반드시 실명이어야 합니다!</li>
                     <hr>
-                    <input type="e-mail" size="26" id="email"> <strong>메일 수신여부</strong><br>
+
+                    <input type="text" size="26" id="email"> <strong>메일 수신여부</strong><br>
                     <li><strong>할인 이벤트정보</strong> 및 할인쿠폰,관심분야 등 꼭 필요한 정보를 빠르게 받아보실 수 있습니다.</li>
                     <li>비밀번호 분실시 E-mail로 확인해 드리니, <strong id="text_email">정확한 E-mail주소를 기입</strong>해 주세요.</li>
                     <hr>
-                    <input type="text" size="6" id="code_first"> - <input type="text" size="6" id="code_second"> <button>우편번호 검색</button>
+                    <input type="text" size="6" id="zipCodeFirst"> - <input type="text" size="6" id="zipCodeSecond"> <button>우편번호 검색</button>
                     <hr>
-                    <input type="text" size="60" id="address_first">
-                    <input type="text" size="60" id="address_second">
+                    <input type="text" size="60" id="addressFirst">
+                    <input type="text" size="60" id="addressSecond">
                     <hr>
-                    <input type="text" size="3"> - <input type="text" size="4"> - <input type="text" size="4">
+                    <input type="text" size="3" id="tel1"> - <input type="text" size="4" id="tel2"> - <input type="text" size="4" id="tel3">
                 </aside>
 
             </div>
             <div style="text-align: center;">
-                <button style="margin-bottom: 20px;"><a href="./login.html">다음</a></button>
+                <button style="margin-bottom: 20px;" onclick="insertDataTest()">다음</button>
             </div>
         </div>
+        
+
+        <script>
+            function insertDataTest(){
+                var id = document.getElementById('id').value;
+                var pw = document.getElementById('pw').value;
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var addr = document.getElementById('addressFirst').value;
+                var zipcode = document.getElementById('zipCodeFirst').value +"-"+ document.getElementById('zipCodeSecond').value;
+                var tel = document.getElementById('tel1').value + "-" + document.getElementById('tel2').value + "-" + document.getElementById('tel3').value;
+
+                var request = new XMLHttpRequest();
+
+                request.onreadystatechange= function(){
+                    if(request.readyState==4&&request.status==200){
+                        document.getElementById('ta').innerHTML = request.responseText;
+                    }
+                }
+                
+                request.open('POST', './sign_up.php', true);
+
+                request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                request.send('id='+id+'&'+'pw='+pw+'&'+'name='+name+'&'+'email='+email+'&'+'address='+addr+'&'+'zipCodeFirst='+zipcode+'&'+'tel='+tel);
+            }
+        </script>
+
+        
+
     </body>
 </html>
